@@ -11,10 +11,10 @@ int main() {
   cout << "Введите Вашу фамилию: ";
   string surname;
   cin >> surname;
-  cout << "Введите Ваш любимый фильм: ";
-  string film;
-  cin >> film;
+  cout << "Введите Вашу любимую книгу: ";
+  string book;
+  cin >> book;
   string file_name = "results.txt";
   ofstream fout(file_name, ios::app);
-  fout << name << " " << surname << " " << film << endl;
+  fout << name << " " << surname << " " << book << endl;
 }
