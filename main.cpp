@@ -1,4 +1,3 @@
-/* Создайте в папке репозитория файл main.cpp с исходным кодом программы, запрашивающей при запуске имя и фамилию пользователя, а также название любимого фильма, и добавляющей эту информацию в конец текстового файла с результатами. */
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -14,7 +13,10 @@ int main() {
   cout << "Введите Вашу любимую книгу: ";
   string book;
   cin >> book;
+  cout << "Введите партию, за которую Вы планируете голосовать: ";
+  string party;
+  cin >> party;
   string file_name = "results.txt";
   ofstream fout(file_name, ios::app);
-  fout << name << " " << surname << " " << book << endl;
+  fout << name << " " << surname << " " << book << " " << party << endl;
 }
