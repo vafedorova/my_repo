@@ -5,13 +5,13 @@
 using namespace std;
 
 int main() {
-  cout << "Введите имя: ";
+  cout << "Введите Ваше имя: ";
   string name;
   cin >> name;
-  cout << "Введите фамилию: ";
+  cout << "Введите Вашу фамилию: ";
   string surname;
   cin >> surname;
-  cout << "Введите любимый фильм: ";
+  cout << "Введите Ваш любимый фильм: ";
   string film;
   cin >> film;
   string file_name = "results.txt";
