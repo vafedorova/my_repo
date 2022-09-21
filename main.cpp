@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <iomanip>
 using namespace std;
 
 int main() {
@@ -24,8 +25,20 @@ int main() {
     fout.close();
   }
   else if (choice == "2") {
+    cout << setiosflags(ios::left) << setw(20) << "Name" << setw(20) << "Surname" << setw(20) << "Film" << endl;
     ifstream fin(file_name);
-    cout << fin.rdbuf() << endl;
+    while (!fin.eof()) {
+      string line;
+      getline(fin, line);
+      int pos = line.find(" ");
+      string name = line.substr(0, pos);
+      line.erase(0, pos + 1);
+      pos = line.find(" ");
+      string surname = line.substr(0, pos);
+      line.erase(0, pos + 1);
+      string film = line;
+      cout << setiosflags(ios::left) << setw(20) << name << setw(20) << surname << setw(20) << film << endl;
+    }
     fin.close();
   }
 }
