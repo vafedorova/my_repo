@@ -14,13 +14,14 @@ const string WHITESPACE = " \n\r\t\f\v";
 
 void poll();
 void get_data(int w, int h);
+void update_questions();
 string ltrim(const string &s);
 string rtrim(const string &s);
 string trim(const string &s);
 string str(int a);
 
 int main() {
-    cout << "Conduct a survey (1) or display saved results (2): ";
+    cout << "Conduct a survey (1), display saved results (2) or update questions (3): ";
     string choice;
     getline(cin, choice);
     if (choice == "1") {
@@ -28,6 +29,12 @@ int main() {
     }
     else if (choice == "2") {
         get_data(15, 100);
+    }
+    else if (choice == "3") {
+        update_questions();
+    }
+    else {
+        cout << "Wrong input";
     }
 }
 
@@ -98,6 +105,21 @@ void get_data(int w, int h) {
         }
     }
     cout << "Answers count: " << count << " The most beloved answer: " << max_ans << endl;
+}
+
+void update_questions() {
+    ofstream quest(question_file_name);
+    ofstream res_cl(file_name);
+    string q;
+    getline(cin, q);
+    q = trim(q);
+    while (q != "end") {
+        quest << q << endl;
+        getline(cin, q);
+        q = trim(q);
+    }
+    quest.close();
+    res_cl.close();
 }
 
 string ltrim(const string &s) {

@@ -1,5 +1,3 @@
 Enter your name
 Enter your surname
-Enter your favourite book
-Enter your favourite fruit
-Enter your favourite animal
+Enter your favourite film
